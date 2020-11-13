@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FilmBook</string>
+    <string name="Title">Naslov</string>
+    <string name="Search">Pretraga</string>
+    <string name="search_error">Popunite polje za pretragu</string>
+    <string name="error">Greska</string>
+    <string name="Year">Godina</string>
+    <string name="Genre">Zanr</string>
+    <string name="Director">Direktor</string>
+    <string name="Actors">Glumci</string>
+    <string name="Language">Jezik</string>
+    <string name="Plot">Prica</string>
+    <string name="Country">Drzava</string>
+    <string name="Released">Izdato</string>
+    <string name="drawer_home_title">Pocetna</string>
+    <string name="drawer_settings_title">Podesavanja</string>
+    <string name="drawer_about_title">O aplikaciji</string>
+    <string name="drawer_home_subtitle">Idite na pocetnu stranu</string>
+    <string name="drawer_about_subtitle">Detalji aplikacije</string>
+    <string name="drawer_settings_subtitle">Podesite aplikaciju</string>
+    <string name="drawer_open">Otvorite Navigacioni Panel</string>
+    <string name="drawer_close">Zatvorite Navigacioni Panel</string>
+    <string name="About">O aplikaciji</string>
+    <string name="created_by">"Napravio : "</string>
+    <string name="Notifications">Obavestenja</string>
+    <string name="show_notifications">Prikazuj Obavestenja</string>
+    <string name="drawer_favorites_title">Favoriti</string>
+    <string name="drawer_favorites_subtitle">Otvorite Vase Omiljene Filmove</string>
+    <string name="Favorites">Favoriti</string>
+    <string name="add_favorites_success">Film Je Dodat U Favorite</string>
+    <string name="add_favorites_unsuccess">Film Nije Dodat U Favorite</string>
+    <string name="Updated">Azurirano</string>
+    <string name="Deleted">Obrisano</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="hello_world">Hello Square World!</string>
+    <string name="create_by">Napravio  : Vladimir Vozar</string>
+    <string name="show_splash_screen">Prikazi Splash Screen</string>
+    <string name="SplashScreen" translatable="false">Splash Screen Podesavanja</string>
+</resources>

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">FilmBook</string>
+    <string name="Title">Title</string>
+    <string name="Search">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="search_error">Fill the search field</string>
+    <string name="error">Error</string>
+    <string name="Year">Year</string>
+    <string name="Released">Released</string>
+    <string name="Genre">Genre</string>
+    <string name="Director">Director</string>
+    <string name="Actors">Actors</string>
+    <string name="Plot">Plot</string>
+    <string name="Language">Language</string>
+    <string name="Country">Country</string>
+    <string name="drawer_home_title">Home</string>
+    <string name="drawer_settings_title">Settings</string>
+    <string name="drawer_about_title">About</string>
+    <string name="drawer_home_subtitle">Go to home page</string>
+    <string name="drawer_about_subtitle">Application details</string>
+    <string name="drawer_settings_subtitle">Configure application</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+    <string name="About">About</string>
+    <string name="Ok" translatable="false">Ok</string>
+    <string name="created_by">Created by :</string>
+    <string name="Notifications">Notifications</string>
+    <string name="show_notifications">Show Notifications</string>
+    <string name="drawer_favorites_title">Favorites</string>
+    <string name="drawer_favorites_subtitle">Open Your Favorite Movies</string>
+    <string name="Favorites">Favorites</string>
+    <string name="add_favorites_success">Added Movie To Favorites</string>
+    <string name="add_favorites_unsuccess">Movie Isn\'t Added To Favorites</string>
+    <string name="Updated">Updated</string>
+    <string name="Deleted">Deleted</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="SplashScreen">Splash Screen Settings</string>
+    <string name="create_by">Created By : Kristian Kis</string>
+    <string name="show_splash_screen">Show Splash Screen</string>
+</resources>
