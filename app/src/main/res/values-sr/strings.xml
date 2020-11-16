@@ -37,4 +37,5 @@
     <string name="create_by">Napravio  : Vladimir Vozar</string>
     <string name="show_splash_screen">Prikazi Splash Screen</string>
     <string name="SplashScreen" translatable="false">Splash Screen Podesavanja</string>
+    <string name="select_date">Izaberite Datum</string>
 </resources>

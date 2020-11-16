@@ -1,29 +1,36 @@
 package com.ftninformatika.termin27_webservices.Fragments;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.ftninformatika.termin27_webservices.Activities.MainActivity;
 import com.ftninformatika.termin27_webservices.Model.Movie;
-import com.ftninformatika.termin27_webservices.Net.ORMLight.DatabaseHelper;
 import com.ftninformatika.termin27_webservices.R;
-import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.squareup.picasso.Picasso;
 
 import java.sql.SQLException;
+import java.util.Calendar;
 
 public class FavoriteDetailsFragment extends Fragment {
 
@@ -49,6 +56,24 @@ public class FavoriteDetailsFragment extends Fragment {
         TextView tvTitle = view.findViewById(R.id.textView_TitleFavorites);
         TextView tvYear = view.findViewById(R.id.textView_YearFavorites);
         ratingBar = view.findViewById(R.id.ratingBar_Favorites);
+        Button buttonDate = view.findViewById(R.id.buttonSelectDate);
+        Button buttonTime = view.findViewById(R.id.buttonSelectTime);
+
+        buttonDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(getActivity().getSupportFragmentManager(), "DatePicker");
+            }
+        });
+
+        buttonTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new TimePickerFragment();
+                newFragment.show(getActivity().getSupportFragmentManager(), "TimePicker");
+            }
+        });
 
         tvTitle.setText(movie.getTitle());
         tvYear.setText(movie.getYear());
@@ -101,4 +126,41 @@ public class FavoriteDetailsFragment extends Fragment {
         }
     }
 
+    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            Toast.makeText(getActivity(), dayOfMonth + "/" + month + "/" + year + ".", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+            final Calendar c = Calendar.getInstance();
+
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minutes = c.get(Calendar.MINUTE);
+
+            return new TimePickerDialog(getActivity(), this, hour, minutes, DateFormat.is24HourFormat(getActivity()));
+        }
+
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            Toast.makeText(getActivity(), hourOfDay + ":" + minute, Toast.LENGTH_SHORT).show();
+        }
+    }
 }
+
+

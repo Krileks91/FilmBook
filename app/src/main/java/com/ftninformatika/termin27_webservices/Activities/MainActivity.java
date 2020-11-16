@@ -207,16 +207,16 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.on
         if (searchShown) {
             finish();
         } else if (detailsShown) {
-            getFragmentManager().popBackStack();
+            getSupportFragmentManager().popBackStack();
             showSearchFragment();
         } else if (settingsShown) {
-            getFragmentManager().popBackStack();
+            getSupportFragmentManager().popBackStack();
             showSearchFragment();
         } else if (favoritesListShown) {
-            getFragmentManager().popBackStack();
+            getSupportFragmentManager().popBackStack();
             showSearchFragment();
         } else if (favoritesShown) {
-            getFragmentManager().popBackStack();
+            getSupportFragmentManager().popBackStack();
             showFavoritesListFragment();
         }
     }

@@ -43,4 +43,6 @@
     <string name="SplashScreen">Splash Screen Settings</string>
     <string name="create_by">Created By : Kristian Kis</string>
     <string name="show_splash_screen">Show Splash Screen</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
 </resources>
