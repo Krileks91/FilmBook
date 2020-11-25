@@ -15,15 +15,20 @@ import java.sql.SQLException;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
+    //Dajemo ime bazi
     private static final String DATABASE_NAME = "favorites.db";
+    //i pocetnu verziju baze. Obicno krece od 1
     private static final int DATABASE_VERSION = 1;
 
     private Dao<Movie, String> movieDao = null;
 
+    //Potrebno je dodati konstruktor zbog pravilne inicijalizacije biblioteke
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    //Prilikom kreiranja baze potrebno je da pozovemo odgovarajuce metode biblioteke
+    //prilikom kreiranja moramo pozvati TableUtils.createTable za svaku tabelu koju imamo
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try {
@@ -33,6 +38,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         }
     }
 
+    //kada zelimo da izmenomo tabele, moramo pozvati TableUtils.dropTable za sve tabele koje imamo
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         try {
@@ -42,7 +48,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             throwables.printStackTrace();
         }
     }
-
+    //jedan Dao objekat sa kojim komuniciramo. Ukoliko imamo vise tabela
+    //potrebno je napraviti Dao objekat za svaku tabelu
     public Dao<Movie, String> getMovieDao() throws SQLException {
         if (movieDao == null) {
             movieDao = getDao(Movie.class);
@@ -50,7 +57,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
         return movieDao;
     }
-
+    //obavezno prilikom zatvarnja rada sa bazom osloboditi resurse
     @Override
     public void close() {
         movieDao = null;

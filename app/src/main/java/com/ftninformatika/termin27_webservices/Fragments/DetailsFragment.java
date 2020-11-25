@@ -50,7 +50,7 @@ public class DetailsFragment extends Fragment {
 
     private Movie movie;
 
-
+    //Postavljamo ove atribute jer nam trebaju za komunikaciju fragmenta i notifikacije
     public static final int NOTIF_ID = 101;
     public static final String NOTIF_CHANNEL_ID = "nas_notif_kanal";
 
@@ -149,14 +149,15 @@ public class DetailsFragment extends Fragment {
 
         Picasso.get().load(movie.getPoster()).into(imageView);
     }
-
+    //Metoda kreiranja toolbara menija
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
         inflater.inflate(R.menu.details_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
+    //Metoda izabira sta da bude u Toolbaru
+    //dodajemo ako treba delete, update
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -166,7 +167,9 @@ public class DetailsFragment extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    //Metoda prikaza notifikacije ako imamo isti podatak u bazi, nemoj dodati postojeci
+    //Ako nema, dodaj
+    //Moramo napraviti u Model/npr Movie, lokalnu bazu psfs FIELD_TABLE_USER="movies"
     private void doAddElement() {
         try {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());

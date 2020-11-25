@@ -126,7 +126,7 @@ public class FavoriteDetailsFragment extends Fragment {
         }
     }
 
-    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener{
 
         @Override
         public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {

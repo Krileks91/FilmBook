@@ -11,9 +11,10 @@ import com.google.gson.annotations.SerializedName;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+//Pravimo lokalnu bazu: Ime tabele
 @DatabaseTable(tableName = Movie.TABLE_NAME_USER)
 public class Movie {
-
+        //Atributi tabele
     public static final String TABLE_NAME_USER = "movies";
 
     public static final String FIELD_NAME_ID = "id";
@@ -24,10 +25,12 @@ public class Movie {
 
     @SerializedName("Title")
     @Expose
+    //Kolona tabele(prema atributima)
     @DatabaseField(columnName = FIELD_NAME_TITLE)
     private String title;
     @SerializedName("Year")
     @Expose
+    //Kolona tabele(prema atributima)
     @DatabaseField(columnName = FIELD_NAME_YEAR)
     private String year;
     @SerializedName("Rated")
@@ -65,6 +68,7 @@ public class Movie {
     private String awards;
     @SerializedName("Poster")
     @Expose
+    //Kolona tabele(prema atributima)
     @DatabaseField(columnName = FIELD_NAME_IMAGE)
     private String poster;
     @SerializedName("Ratings")
@@ -81,6 +85,7 @@ public class Movie {
     private String imdbVotes;
     @SerializedName("imdbID")
     @Expose
+    //Kolona tabele(prema atributima)
     @DatabaseField(id = true, columnName = FIELD_NAME_ID)
     private String imdbID;
     @SerializedName("Type")
@@ -101,6 +106,7 @@ public class Movie {
     @SerializedName("Response")
     @Expose
     private String response;
+    //Kolona tabele(prema atributima)
     @DatabaseField(columnName = FIELD_NAME_RATING)
     private float rating;
 

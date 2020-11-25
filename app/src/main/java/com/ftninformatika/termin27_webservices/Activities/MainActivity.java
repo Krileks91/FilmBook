@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.on
             showFavoritesListFragment();
         }
     }
-
+    //Metoda koja komunicira sa bazom podataka
     public DatabaseHelper getDatabaseHelper() {
         if (databaseHelper == null) {
             databaseHelper = OpenHelperManager.getHelper(this, DatabaseHelper.class);
